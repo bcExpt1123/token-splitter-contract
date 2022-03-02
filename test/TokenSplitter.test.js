@@ -51,10 +51,10 @@ describe("TokenSplitter", function () {
     await transferTokenTrx.wait();
     const splitTrx = await tokenSplitter.split();
     await splitTrx.wait();
-    expect(await tokenSplitter.getTokenBalance()).to.equal(0);
-    console.log(await token.balanceOf(inputData[0].payeeAddress));
-    console.log(await token.balanceOf(inputData[1].payeeAddress));
-    console.log(await token.balanceOf(inputData[2].payeeAddress));
+    expect(await tokenSplitter.getTokenBalance()).to.equal(1);
+    console.log(await token.balanceOf(inputData[0]));
+    console.log(await token.balanceOf(inputData[1]));
+    console.log(await token.balanceOf(inputData[2]));
   });
  
 });
